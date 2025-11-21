@@ -2,491 +2,105 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Mardock LLC | Software and Systems</title>
+  <title>Mardock LLC | Software Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Mardock LLC is a small software studio run by Simao Mansur. I build web apps, data tools, and systems for people who want working software, not drama."
-  />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   />
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --bg: #050816;
-      --bg-soft: #0b1020;
-      --card: #0f172a;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.12);
-      --text-main: #e5e7eb;
-      --text-muted: #9ca3af;
-      --border-subtle: rgba(148, 163, 184, 0.2);
-      --radius-lg: 18px;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.85);
-    }
-
-    body {
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #020617 0, #020617 40%, #000 100%);
-      color: var(--text-main);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      padding: 24px;
-    }
-
-    .shell {
-      width: 100%;
-      max-width: 960px;
-      border-radius: 24px;
-      background: radial-gradient(circle at top left, #1e293b 0, #020617 55%);
-      border: 1px solid rgba(148, 163, 184, 0.28);
-      box-shadow: var(--shadow-soft);
-      padding: 26px 22px;
-      backdrop-filter: blur(18px);
-    }
-
-    @media (min-width: 768px) {
-      .shell {
-        padding: 32px 36px;
-      }
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 28px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo-mark {
-      width: 32px;
-      height: 32px;
-      border-radius: 30%;
-      background:
-        radial-gradient(circle at 30% 20%, #f9fafb 0, #e5e7eb 24%, transparent 45%),
-        radial-gradient(circle at 75% 75%, #38bdf8 0, #0ea5e9 32%, transparent 60%),
-        radial-gradient(circle at 10% 90%, #22c55e 0, #16a34a 30%, transparent 55%);
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .brand-name {
-      font-size: 1rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .brand-subtitle {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .pill {
-      font-size: 0.75rem;
-      border-radius: 999px;
-      padding: 6px 12px;
-      border: 1px solid var(--border-subtle);
-      color: var(--text-muted);
-      background: rgba(15, 23, 42, 0.8);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      white-space: nowrap;
-    }
-
-    .pill-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.28);
-    }
-
-    main {
-      display: grid;
-      gap: 24px;
-    }
-
-    @media (min-width: 900px) {
-      main {
-        grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
-        gap: 30px;
-      }
-    }
-
-    .hero {
-      padding: 20px 18px 20px;
-      border-radius: var(--radius-lg);
-      background: linear-gradient(
-          135deg,
-          rgba(15, 23, 42, 0.9),
-          rgba(15, 23, 42, 0.98)
-        ),
-        radial-gradient(circle at top right, rgba(56, 189, 248, 0.25), transparent);
-      border: 1px solid var(--border-subtle);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background:
-        radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.14), transparent 54%),
-        radial-gradient(circle at 100% 100%, rgba(129, 140, 248, 0.12), transparent 60%);
-      opacity: 0.9;
-      mix-blend-mode: soft-light;
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .eyebrow {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .hero-title {
-      font-size: clamp(1.9rem, 3vw, 2.4rem);
-      line-height: 1.1;
-      margin-bottom: 10px;
-    }
-
-    .hero-title span {
-      color: var(--accent);
-    }
-
-    .hero-subtitle {
-      font-size: 0.98rem;
-      color: var(--text-muted);
-      max-width: 40rem;
-      margin-bottom: 16px;
-    }
-
-    .hero-grid {
-      display: grid;
-      gap: 12px;
-      margin-top: 14px;
-    }
-
-    @media (min-width: 640px) {
-      .hero-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    .hero-chip {
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      padding: 7px 12px;
-      font-size: 0.78rem;
-      background: rgba(15, 23, 42, 0.9);
-      color: var(--text-main);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .hero-chip span {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-      margin-right: 6px;
-    }
-
-    .about-card {
-      padding: 18px 18px 20px;
-      border-radius: var(--radius-lg);
-      background: radial-gradient(circle at top left, #020617 0, #020617 45%, #020617 100%);
-      border: 1px solid var(--border-subtle);
-      display: grid;
-      gap: 14px;
-    }
-
-    .section-title {
-      font-size: 0.86rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-muted);
-    }
-
-    .about-main {
-      font-size: 0.96rem;
-      color: var(--text-main);
-      line-height: 1.6;
-    }
-
-    .about-meta {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .mini-pill {
-      font-size: 0.78rem;
-      border-radius: 999px;
-      padding: 5px 10px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      color: var(--text-muted);
-      background: rgba(15, 23, 42, 0.85);
-    }
-
-    .services {
-      margin-top: 6px;
-      display: grid;
-      gap: 12px;
-    }
-
-    .service-card {
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      background: radial-gradient(circle at top, #020617 0, #020617 80%);
-      padding: 14px 14px 15px;
-    }
-
-    .service-title-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 6px;
-    }
-
-    .service-title {
-      font-size: 0.96rem;
-      font-weight: 500;
-    }
-
-    .service-tag {
-      font-size: 0.72rem;
-      padding: 4px 9px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      border: 1px solid rgba(56, 189, 248, 0.6);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      white-space: nowrap;
-    }
-
-    .service-body {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .contact {
-      margin-top: 16px;
-      padding: 14px 16px;
-      border-radius: var(--radius-lg);
-      border: 1px dashed rgba(148, 163, 184, 0.7);
-      background: rgba(15, 23, 42, 0.9);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 10px 16px;
-      justify-content: space-between;
-    }
-
-    .contact-text {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .link-btn {
-      border-radius: 999px;
-      padding: 7px 13px;
-      font-size: 0.82rem;
-      border: 1px solid rgba(148, 163, 184, 0.9);
-      background: #020617;
-      color: var(--text-main);
-      text-decoration: none;
-    }
-
-    .link-btn.primary {
-      border-color: rgba(56, 189, 248, 0.9);
-      background: linear-gradient(135deg, #0ea5e9, #22c55e);
-      color: #020617;
-      font-weight: 500;
-    }
-
-    footer {
-      margin-top: 20px;
-      padding-top: 14px;
-      border-top: 1px solid rgba(30, 64, 175, 0.6);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 8px;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-  </style>
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
+
 <body>
-  <div class="shell">
-    <header>
-      <div class="brand">
-        <div class="logo-mark"></div>
-        <div class="brand-text">
-          <div class="brand-name">Mardock LLC</div>
-          <div class="brand-subtitle">Software, systems, and experiments</div>
-        </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Mardock LLC</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero container">
+    <h1>I build clean, practical software for people who want things to just work.</h1>
+
+    <p>
+      I'm Simao Mansur. I run Mardock LLC, a small studio based in Denver where I build
+      web apps, APIs, and custom tools for clients and for my own products.
+    </p>
+
+    <div class="btn-row">
+      <a class="btn primary" href="/projects.html">View Projects</a>
+      <a class="btn" href="/contact.html">Contact Me</a>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section">
+    <h2>What I Do</h2>
+
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Web Applications</h3>
+        <p>I build full-stack applications with modern tooling, clean structure, and long-term maintainability.</p>
       </div>
-      <div class="pill">
-        <span class="pill-dot"></span>
-        Taking on small projects
+
+      <div class="service-card">
+        <h3>APIs & Integrations</h3>
+        <p>Stable backend systems and integrations that are predictable and dependable.</p>
       </div>
-    </header>
 
-    <main>
-      <section class="hero">
-        <div class="hero-inner">
-          <div class="eyebrow">Solo software studio</div>
-          <h1 class="hero-title">
-            I build practical software for people who just want it to work.
-          </h1>
-          <p class="hero-subtitle">
-            Mardock LLC is run by me, Simao Mansur. I design and build small
-            products, tools, and systems that are simple to use and not a pain to maintain.
-          </p>
+      <div class="service-card">
+        <h3>Data & Automation</h3>
+        <p>Small tools, scripts, and automations that streamline workflows and reduce manual overhead.</p>
+      </div>
+    </div>
+  </section>
 
-          <div class="hero-grid">
-            <div class="hero-chip">
-              <span>Focus</span> Web apps and APIs
-            </div>
-            <div class="hero-chip">
-              <span>Stack</span> Java, Spring, React, TypeScript, Postgres
-            </div>
-            <div class="hero-chip">
-              <span>Location</span> Denver Colorado
-            </div>
-          </div>
-        </div>
-      </section>
+  <!-- Featured Projects -->
+  <section class="section">
+    <h2>Featured Projects</h2>
 
-      <section class="about-card">
-        <div>
-          <div class="section-title">About</div>
-          <p class="about-main">
-            I am a computer science grad who likes building real projects more than talking about them. I have worked on full stack web apps, data projects, and systems work, and I treat even small ideas like they matter.
-          </p>
-          <p class="about-meta">
-            Right now I am focused on polishing my own projects, taking on small client work, and building a repeatable setup for future products under Mardock.
-          </p>
-          <div class="pill-row">
-            <span class="mini-pill">Full stack development</span>
-            <span class="mini-pill">APIs and integrations</span>
-            <span class="mini-pill">Data and automation</span>
-          </div>
-        </div>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="/assets/placeholder.jpg" alt="Beat Layer preview" />
+        <h3>Beat Layer</h3>
+        <p>A collaborative music layering platform built with Spring Boot and React.</p>
+        <a class="btn" href="/projects.html">View Project</a>
+      </div>
 
-        <div class="services">
-          <div class="service-card">
-            <div class="service-title-row">
-              <div class="service-title">Small custom tools</div>
-              <div class="service-tag">Lightweight</div>
-            </div>
-            <p class="service-body">
-              Internal dashboards, one off utilities, and glue code that connects the tools you already use. Simple, focused, and documented.
-            </p>
-          </div>
+      <div class="project-card">
+        <img src="/assets/placeholder.jpg" alt="Voting system preview" />
+        <h3>Blockchain Voting System</h3>
+        <p>A prototype for decentralized, tamper-resistant election systems.</p>
+        <a class="btn" href="/projects.html">View Project</a>
+      </div>
+    </div>
+  </section>
 
-          <div class="service-card">
-            <div class="service-title-row">
-              <div class="service-title">Product experiments</div>
-              <div class="service-tag">In progress</div>
-            </div>
-            <p class="service-body">
-              I build and iterate on my own ideas, including music tools and small web products. This keeps the stack current and the work honest.
-            </p>
-          </div>
-        </div>
+  <!-- About -->
+  <section class="section about">
+    <h2>About Me</h2>
+    <p>
+      I'm a computer science grad who enjoys building real, working software. I’ve worked across
+      backend systems, frontend development, and data engineering. I like taking ideas from early
+      concept to something you can actually ship and rely on.
+    </p>
+  </section>
 
-        <div class="contact">
-          <div class="contact-text">
-            Light project in mind or want to talk about the stack behind Mardock.
-          </div>
-          <div class="contact-links">
-            <a class="link-btn primary" href="mailto:simaomansur1@gmail.com">
-              Email me
-            </a>
-            <a
-              class="link-btn"
-              href="https://github.com/simaomansur"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-            <a
-              class="link-btn"
-              href="https://www.linkedin.com/in/simao-mansur/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
+  <!-- CTA -->
+  <section class="section cta">
+    <p>Have an idea or want to talk through a project?</p>
+    <a class="btn primary" href="/contact.html">Get in Touch</a>
+  </section>
 
-    <footer>
-      <span>&copy; <span id="year"></span> Mardock LLC</span>
-      <span>Built, deployed, and maintained by one person</span>
-    </footer>
-  </div>
+  <!-- Footer -->
+  <footer>
+    &copy; <script>document.write(new Date().getFullYear())</script> Mardock LLC
+  </footer>
 
-  <script>
-    // keep the year current
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
