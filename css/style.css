@@ -29,6 +29,7 @@ body {
   background: var(--bg);
   color: var(--text-main);
   line-height: 1.6;
+  text-align: center; /* default centering for headings and single-column text */
 }
 
 /* ------------------------------
@@ -50,6 +51,7 @@ header {
   padding: 26px 32px;
   max-width: var(--max-width);
   margin: 0 auto;
+  text-align: left; /* keep header items clean */
 }
 
 .logo {
@@ -74,9 +76,9 @@ nav a:hover {
 .hero {
   text-align: center;
   max-width: var(--max-width);
+  margin: 70px auto 60px;
   padding-left: 32px;
   padding-right: 32px;
-  margin: 70px auto 60px;
 }
 
 .hero h1 {
@@ -91,14 +93,16 @@ nav a:hover {
   margin-bottom: 26px;
 }
 
-/* ------------------------------
-   Buttons
------------------------------- */
+/* Center hero buttons */
 .btn-row {
   display: flex;
   gap: 16px;
+  justify-content: center;
 }
 
+/* ------------------------------
+   Buttons
+------------------------------ */
 .btn {
   padding: 10px 18px;
   border-radius: var(--radius);
@@ -136,6 +140,7 @@ nav a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
+  justify-items: center; /* centers the grid visually */
 }
 
 .service-card {
@@ -143,6 +148,9 @@ nav a:hover {
   padding: 20px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
+  text-align: left; /* keeps readability inside cards */
+  width: 100%; /* ensures uniform column width */
+  max-width: 320px;
 }
 
 .service-card h3 {
@@ -162,6 +170,7 @@ nav a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
+  justify-items: center;
 }
 
 .project-card {
@@ -169,6 +178,9 @@ nav a:hover {
   border: 1px solid var(--border);
   padding: 16px;
   border-radius: var(--radius);
+  text-align: left;
+  width: 100%;
+  max-width: 340px;
 }
 
 .project-card img {
@@ -200,8 +212,10 @@ nav a:hover {
 }
 
 .about p {
-  max-width: none;
+  max-width: none; /* let it fully match page width */
   margin: 0 auto;
+  font-size: 1rem;
+  color: var(--text-muted);
 }
 
 /* ------------------------------
