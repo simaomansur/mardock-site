@@ -1,11 +1,10 @@
 /* ==========================================================
-   Mardock LLC — Sleek Black / Neutral Single Page
-   Inspired by your reference image: minimal, elegant, calm.
+   Mardock LLC
    ========================================================== */
 
 :root{
-  --bg: #070709;              /* true black base */
-  --bg2: #0b0b0e;             /* slightly lifted black */
+  --bg: #070709;
+  --bg2: #0b0b0e;
   --panel: rgba(255,255,255,0.04);
   --panel2: rgba(255,255,255,0.06);
   --border: rgba(255,255,255,0.08);
@@ -151,10 +150,6 @@ a{ color: inherit; }
     url("/assets/portrait.jpg") center/cover no-repeat;
   filter: grayscale(1) contrast(1.05);
 }
-
-/* If you use the <img> instead of background-image, you can style it with:
-.hero__img{ width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(1) contrast(1.05); }
-*/
 
 .hero__portraitOverlay{
   position: absolute;
