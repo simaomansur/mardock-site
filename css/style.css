@@ -522,17 +522,14 @@ a{ color: inherit; }
     flex-wrap: wrap;
     gap: 10px;
   }
-
   .nav{
     width: 100%;
     justify-content: space-between;
     gap: 10px;
   }
-
   .nav a{
     font-size: 0.9rem;
   }
-
   .nav__cta{
     padding: 8px 12px;
   }
